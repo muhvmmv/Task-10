@@ -1,4 +1,3 @@
-// src/__tests__/App.test.js
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -12,15 +11,15 @@ test("renders Home page and navigates to About and Contact pages", async () => {
     </BrowserRouter>
   );
 
-  // Home page
+  // For Home
   expect(screen.getByText(/my react spa/i)).toBeInTheDocument();
   expect(screen.getByText(/home page/i)).toBeInTheDocument();
 
-  // Navigate to About
+  // For About
   userEvent.click(screen.getByText(/about/i));
   expect(screen.getByText(/about page/i)).toBeInTheDocument();
 
-  // Navigate to Contact
+  // Gor Contact
   userEvent.click(screen.getByText(/contact/i));
   expect(screen.getByText(/contact page/i)).toBeInTheDocument();
 });
